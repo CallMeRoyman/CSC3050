@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "project_1",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "assembler::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-assembler-Debug-efc942f0ab793e1ab1a9.json",
+					"jsonFile" : "target-assembler-Debug-2cfa4032d7188a87b4b2.json",
 					"name" : "assembler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tester::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tester-Debug-c0097c2f2b232abd688d.json",
+					"name" : "tester",
 					"projectIndex" : 0
 				}
 			]

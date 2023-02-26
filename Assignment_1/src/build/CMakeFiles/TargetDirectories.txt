@@ -1,3 +1,4 @@
 /home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles/assembler.dir
+/home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles/tester.dir
 /home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles/edit_cache.dir
 /home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles/rebuild_cache.dir

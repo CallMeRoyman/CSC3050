@@ -62,7 +62,7 @@ string getBin(string myKey, map<string, string> myMap) {
     return "-1";
 }
 
-string twoComp(string str){
+string twoComp(string str) {
     int len = str.length();
     string rst;
     bool firstOne = false;

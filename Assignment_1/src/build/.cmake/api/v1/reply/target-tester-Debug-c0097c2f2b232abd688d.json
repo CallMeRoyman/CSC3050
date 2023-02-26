@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "assembler"
+			"path" : "tester"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 5,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -48,7 +48,7 @@
 			]
 		}
 	],
-	"id" : "assembler::@6890427a1f51a3e7e1df",
+	"id" : "tester::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -64,8 +64,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "assembler",
-	"nameOnDisk" : "assembler",
+	"name" : "tester",
+	"nameOnDisk" : "tester",
 	"paths" : 
 	{
 		"build" : ".",

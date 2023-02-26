@@ -129,12 +129,26 @@ assembler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/build
 .PHONY : assembler/fast
 
+#=============================================================================
+# Target rules for targets named tester
+
+# Build rule for target.
+tester: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tester
+.PHONY : tester
+
+# fast build rule for target.
+tester/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/build
+.PHONY : tester/fast
+
 LabelTable.o: LabelTable.cpp.o
 .PHONY : LabelTable.o
 
 # target to build an object file
 LabelTable.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/LabelTable.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/LabelTable.cpp.o
 .PHONY : LabelTable.cpp.o
 
 LabelTable.i: LabelTable.cpp.i
@@ -143,6 +157,7 @@ LabelTable.i: LabelTable.cpp.i
 # target to preprocess a source file
 LabelTable.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/LabelTable.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/LabelTable.cpp.i
 .PHONY : LabelTable.cpp.i
 
 LabelTable.s: LabelTable.cpp.s
@@ -151,6 +166,7 @@ LabelTable.s: LabelTable.cpp.s
 # target to generate assembly for a file
 LabelTable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/LabelTable.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/LabelTable.cpp.s
 .PHONY : LabelTable.cpp.s
 
 Tester.o: Tester.cpp.o
@@ -158,7 +174,7 @@ Tester.o: Tester.cpp.o
 
 # target to build an object file
 Tester.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Tester.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/Tester.cpp.o
 .PHONY : Tester.cpp.o
 
 Tester.i: Tester.cpp.i
@@ -166,7 +182,7 @@ Tester.i: Tester.cpp.i
 
 # target to preprocess a source file
 Tester.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Tester.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/Tester.cpp.i
 .PHONY : Tester.cpp.i
 
 Tester.s: Tester.cpp.s
@@ -174,8 +190,32 @@ Tester.s: Tester.cpp.s
 
 # target to generate assembly for a file
 Tester.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Tester.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/Tester.cpp.s
 .PHONY : Tester.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 phase1.o: phase1.cpp.o
 .PHONY : phase1.o
@@ -183,6 +223,7 @@ phase1.o: phase1.cpp.o
 # target to build an object file
 phase1.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase1.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase1.cpp.o
 .PHONY : phase1.cpp.o
 
 phase1.i: phase1.cpp.i
@@ -191,6 +232,7 @@ phase1.i: phase1.cpp.i
 # target to preprocess a source file
 phase1.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase1.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase1.cpp.i
 .PHONY : phase1.cpp.i
 
 phase1.s: phase1.cpp.s
@@ -199,6 +241,7 @@ phase1.s: phase1.cpp.s
 # target to generate assembly for a file
 phase1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase1.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase1.cpp.s
 .PHONY : phase1.cpp.s
 
 phase2.o: phase2.cpp.o
@@ -207,6 +250,7 @@ phase2.o: phase2.cpp.o
 # target to build an object file
 phase2.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase2.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase2.cpp.o
 .PHONY : phase2.cpp.o
 
 phase2.i: phase2.cpp.i
@@ -215,6 +259,7 @@ phase2.i: phase2.cpp.i
 # target to preprocess a source file
 phase2.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase2.cpp.i
 .PHONY : phase2.cpp.i
 
 phase2.s: phase2.cpp.s
@@ -223,6 +268,7 @@ phase2.s: phase2.cpp.s
 # target to generate assembly for a file
 phase2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/phase2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/phase2.cpp.s
 .PHONY : phase2.cpp.s
 
 # Help Target
@@ -234,12 +280,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... assembler"
+	@echo "... tester"
 	@echo "... LabelTable.o"
 	@echo "... LabelTable.i"
 	@echo "... LabelTable.s"
 	@echo "... Tester.o"
 	@echo "... Tester.i"
 	@echo "... Tester.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... phase1.o"
 	@echo "... phase1.i"
 	@echo "... phase1.s"

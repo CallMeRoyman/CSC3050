@@ -69,19 +69,19 @@ include CMakeFiles/assembler.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/assembler.dir/flags.make
 
-CMakeFiles/assembler.dir/Tester.cpp.o: CMakeFiles/assembler.dir/flags.make
-CMakeFiles/assembler.dir/Tester.cpp.o: ../Tester.cpp
-CMakeFiles/assembler.dir/Tester.cpp.o: CMakeFiles/assembler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/assembler.dir/Tester.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assembler.dir/Tester.cpp.o -MF CMakeFiles/assembler.dir/Tester.cpp.o.d -o CMakeFiles/assembler.dir/Tester.cpp.o -c /home/roymanclee/CSC3050-Royman/Assignment_1/src/Tester.cpp
+CMakeFiles/assembler.dir/main.cpp.o: CMakeFiles/assembler.dir/flags.make
+CMakeFiles/assembler.dir/main.cpp.o: ../main.cpp
+CMakeFiles/assembler.dir/main.cpp.o: CMakeFiles/assembler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roymanclee/CSC3050-Royman/Assignment_1/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/assembler.dir/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assembler.dir/main.cpp.o -MF CMakeFiles/assembler.dir/main.cpp.o.d -o CMakeFiles/assembler.dir/main.cpp.o -c /home/roymanclee/CSC3050-Royman/Assignment_1/src/main.cpp
 
-CMakeFiles/assembler.dir/Tester.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assembler.dir/Tester.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roymanclee/CSC3050-Royman/Assignment_1/src/Tester.cpp > CMakeFiles/assembler.dir/Tester.cpp.i
+CMakeFiles/assembler.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assembler.dir/main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roymanclee/CSC3050-Royman/Assignment_1/src/main.cpp > CMakeFiles/assembler.dir/main.cpp.i
 
-CMakeFiles/assembler.dir/Tester.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assembler.dir/Tester.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roymanclee/CSC3050-Royman/Assignment_1/src/Tester.cpp -o CMakeFiles/assembler.dir/Tester.cpp.s
+CMakeFiles/assembler.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assembler.dir/main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roymanclee/CSC3050-Royman/Assignment_1/src/main.cpp -o CMakeFiles/assembler.dir/main.cpp.s
 
 CMakeFiles/assembler.dir/LabelTable.cpp.o: CMakeFiles/assembler.dir/flags.make
 CMakeFiles/assembler.dir/LabelTable.cpp.o: ../LabelTable.cpp
@@ -127,7 +127,7 @@ CMakeFiles/assembler.dir/phase2.cpp.s: cmake_force
 
 # Object files for target assembler
 assembler_OBJECTS = \
-"CMakeFiles/assembler.dir/Tester.cpp.o" \
+"CMakeFiles/assembler.dir/main.cpp.o" \
 "CMakeFiles/assembler.dir/LabelTable.cpp.o" \
 "CMakeFiles/assembler.dir/phase1.cpp.o" \
 "CMakeFiles/assembler.dir/phase2.cpp.o"
@@ -135,7 +135,7 @@ assembler_OBJECTS = \
 # External object files for target assembler
 assembler_EXTERNAL_OBJECTS =
 
-assembler: CMakeFiles/assembler.dir/Tester.cpp.o
+assembler: CMakeFiles/assembler.dir/main.cpp.o
 assembler: CMakeFiles/assembler.dir/LabelTable.cpp.o
 assembler: CMakeFiles/assembler.dir/phase1.cpp.o
 assembler: CMakeFiles/assembler.dir/phase2.cpp.o

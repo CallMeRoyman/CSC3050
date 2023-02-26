@@ -15,7 +15,6 @@
 #include "phase1.hpp"
 #include "phase2.hpp"
 using namespace std;
-#define INIT_ADDRESS 0b10000000000000000000000
 
 
 void ignoreComment(string& line) {
@@ -32,12 +31,10 @@ bool onlySpace(string line) {
 
 void firstScan(string myFile, LabelTable *table) {
     ifstream infile;
-    //ofstream outfile;
     string line;
     bool atDotText = false;
     string myLabel;
     unsigned long long myaddress = INIT_ADDRESS;
-    //LabelTable *table = new LabelTable();
     infile.open(myFile.c_str());
     while (getline(infile, line)) {
         /* Discard comment */
@@ -62,11 +59,11 @@ void firstScan(string myFile, LabelTable *table) {
         }
     }
     infile.close();
-    table->printTable();      /* debug session */
+    //table->printTable();      /* debug session */
 }
 
 
-/*
+/*      debug session
 int main(int args, char** argv) {
     LabelTable *table = new LabelTable();
     firstScan(argv[1], table);
