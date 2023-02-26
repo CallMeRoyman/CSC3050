@@ -13,7 +13,7 @@ __builtin_memcpy_aligned_large:
 	addiu $a0, $a0, 4
 	j     __builtin_memcpy_aligned_large
 __builtin_memcpy_bytes:
-	beq   $a2, $zero, __builtin_memcpy_return
+	beq   $a2, $zero, __builtin_memcpy_return 
 	lbu   $t0, 0($a1)
 	sb    $t0, 0($a0)
 	addi  $a2, $a2, -1

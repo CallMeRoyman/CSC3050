@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <string.h> 
-#include "LabelTable.h"
+#include "LabelTable.hpp"
 
 LabelTable pass1 (char * filename);
 LabelTable pass2 (char * filename, LabelTable table);

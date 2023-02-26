@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/assembler.dir/Tester.cpp.o CMakeFiles/assembler.dir/LabelTable.cpp.o CMakeFiles/assembler.dir/phase1.cpp.o CMakeFiles/assembler.dir/phase2.cpp.o -o assembler 
