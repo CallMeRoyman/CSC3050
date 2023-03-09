@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/assembler.dir/main.cpp.o CMakeFiles/assembler.dir/LabelTable.cpp.o CMakeFiles/assembler.dir/phase1.cpp.o CMakeFiles/assembler.dir/phase2.cpp.o -o assembler 
+/opt/homebrew/bin/g++-12  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/assembler.dir/main.cpp.o CMakeFiles/assembler.dir/LabelTable.cpp.o CMakeFiles/assembler.dir/phase1.cpp.o CMakeFiles/assembler.dir/phase2.cpp.o -o assembler 
