@@ -1,4 +1,9 @@
 /**
+ * @version 2.0
+ * BUG FIXED
+ */
+
+/**
  * File: phase1.cpp
  * Scan through the input file for the first time
  * Discard all of the comment
@@ -54,7 +59,7 @@ void firstScan(string myFile, LabelTable *table) {
                 if (!onlySpace(line)) myaddress+=4;
                 table->addLabel(myLabel, myaddress/4);
             } else {
-                myaddress+=4;
+                if (!onlySpace(line)) myaddress+=4;         /* BUG FIXED: add condition`if (!onlySpace(line))`*/
             }
         }
     }

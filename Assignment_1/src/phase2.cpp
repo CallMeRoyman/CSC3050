@@ -1,4 +1,10 @@
 /**
+ * @version 2.0
+ * BUG FIXED
+ */
+
+
+/**
  * File: phase2.cpp
  * Scan through the input file line by line
  * Identify which type of instruction the line is (R, I, J)
@@ -18,14 +24,16 @@ using namespace std;
 
 /* Utility functions */
 
+/* BUG FIXED: the program is now able to remove tab in line */
 void removeFrontSpace(string& line) {
-    while (isspace(line[0])) {
+    while (isspace(line[0]) || line[0] == '\t') {
         line.erase(0,1);
     }
 }
 
+/* BUG FIXED: the program is now able to remove tab in line */
 void removeBackSpace(string& line) {
-    while (isspace(line[line.length()])) {
+    while (isspace(line[line.length()-1]) || line[line.length()-1] == '\t') {
         line.pop_back();
     }
 }
@@ -100,6 +108,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
         removeFrontSpace(line);
         funcName = line.substr(0, line.find(" "));
         removeSubString(funcName, line);
+        removeBackSpace(funcName);  /* BUG FIXED: funcName can come with tab and tab can not be
+                                        removed by the above operation */
         if (type1.count(funcName) == 1) {   //rd, rs, rt
             ++cnt;
             op = "000000";
@@ -116,6 +126,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             rt = line.substr(0, line.find(" "));
+            removeBackSpace(rt);    /* BUG FIXED: rt can come with tab and tab can not be
+                                        removed by the above operation */
             bin = op + getBin(rs, reg) + getBin(rt, reg) + getBin(rd, reg) + shamt + getBin(funcName, type1);
             outfile << bin << endl;
         }
@@ -130,6 +142,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             rt = line.substr(0, line.find(" "));
+            removeBackSpace(rt);    /* BUG FIXED: rt can come with tab and tab can not be
+                                        removed by the above operation */
             bin = op + getBin(rs, reg) + getBin(rt, reg) + rd + shamt + getBin(funcName, type2);
             outfile << bin << endl;
         }
@@ -144,6 +158,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             rs = line.substr(0, line.find(" "));
+            removeBackSpace(rs);    /* BUG FIXED: rs can come with tab and tab can not be
+                                        removed by the above operation */
             bin = op + getBin(rs, reg) + rt + getBin(rd, reg) + shamt + getBin(funcName, type3);
             outfile << bin << endl;
         }
@@ -154,6 +170,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             rt = "00000";
             removeFrontSpace(line);
             rs = line.substr(0, line.find(" "));
+            removeBackSpace(rs);    /* BUG FIXED: rs can come with tab and tab can not be
+                                        removed by the above operation */
             bin = op + getBin(rs, reg) + rt + rd + shamt + getBin(funcName, type4);
             outfile << bin << endl;
         }
@@ -164,7 +182,10 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             rt = "00000";
             removeFrontSpace(line);
             rd = line.substr(0, line.find(" "));
-            bin = op + rs + rt + getBin(rd, reg) + shamt + getBin(funcName, type4);
+            removeBackSpace(rd);    /* BUG FIXED: rd can come with tab and tab can not be
+                                        removed by the above operation */
+            bin = op + rs + rt + getBin(rd, reg) + shamt + getBin(funcName, type5); /* BUG FIXED: change getBin(funcName, type4)
+                                                                                        to (funcName, type5)*/
             outfile << bin << endl;
         }
         else if (type6.count(funcName) == 1) { //rd, rt, sa
@@ -182,7 +203,11 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             shamt = line.substr(0, line.find(" "));
-            bin = op + getBin(rs, reg) + getBin(rt, reg) + getBin(rd, reg) + shamt + getBin(funcName, type1);
+            removeBackSpace(shamt);    /* BUG FIXED: shamt can come with tab and tab can not be
+                                        removed by the above operation */
+            bin = op + rs + getBin(rt, reg) + getBin(rd, reg) + toBinary(stoi(shamt), 5) + getBin(funcName, type6);
+            /* BUG FIXED: change getBin(rs, reg) to rs, shamt to toBinary(stoi(shamt), 5),
+                getBin(funcName, type1) to getBin(funcName, type6) */
             outfile << bin << endl;
         }
         else if (type7.count(funcName) == 1) {  //rd, rt, rs
@@ -200,12 +225,16 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             rs = line.substr(0, line.find(" "));
-            bin = op + getBin(rs, reg) + getBin(rt, reg) + getBin(rd, reg) + shamt + getBin(funcName, type1);
+            removeBackSpace(rs);    /* BUG FIXED: rs can come with tab and tab can not be
+                                        removed by the above operation */
+            bin = op + getBin(rs, reg) + getBin(rt, reg) + getBin(rd, reg) + shamt + getBin(funcName, type7);
+            /* BUG FIXED: change getBin(funcName, type1) to getBin(funcName, type7)*/
             outfile << bin << endl;
         }
         else if (type8.count(funcName) == 1) {  //syscall
             ++cnt;
-            outfile << string("000000") + "00000" + "00000" + "00000" + "00000" + "001100";
+            outfile << string("000000") + "00000" + "00000" + "00000" + "00000" + "001100" << endl;
+            /* BUG FIXED: add endl statement */
         }
         /* I-type */
         else if (type9.count(funcName) == 1) {  //rt, rs, imm
@@ -222,6 +251,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             imm = line.substr(0, line.find(" "));
+            removeBackSpace(imm);    /* BUG FIXED: imm can come with tab and tab can not be
+                                        removed by the above operation */
             if (stoi(imm) < 0) {
                 imm = toBinary(stoi(imm)*(-1), 16);
                 imm = twoComp(imm);
@@ -245,6 +276,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             label = line.substr(0, line.find(" "));
+            removeBackSpace(label);    /* BUG FIXED: label can come with tab and tab can not be
+                                        removed by the above operation */
             int toAddress = table->getAddress(label);
             int currAddress = cnt+(INIT_ADDRESS/4);
             int diff = toAddress - currAddress;
@@ -268,6 +301,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             label = line.substr(0, line.find(" "));
+            removeBackSpace(label);    /* BUG FIXED: label can come with tab and tab can not be
+                                        removed by the above operation */
             int toAddress = table->getAddress(label);
             int currAddress = cnt + (INIT_ADDRESS/4);
             int diff = toAddress - currAddress;
@@ -291,6 +326,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             label = line.substr(0, line.find(" "));
+            removeBackSpace(label);    /* BUG FIXED: label can come with tab and tab can not be
+                                        removed by the above operation */
             int toAddress = table->getAddress(label);
             int currAddress = cnt+(INIT_ADDRESS/4);
             int diff = toAddress - currAddress;
@@ -316,13 +353,15 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             removeSubString(",", line);
             removeFrontSpace(line);
             imm = line.substr(0, line.find(" "));
+            removeBackSpace(imm);    /* BUG FIXED: imm can come with tab and tab can not be
+                                        removed by the above operation */
             if (stoi(imm) < 0) {
                 imm = toBinary(stoi(imm)*(-1), 16);
                 imm = twoComp(imm);
             } else {
                 imm = toBinary(stoi(imm), 16);
             }
-            bin = getBin(funcName, type13) + getBin(rs, reg) + getBin(rt, reg) + imm;
+            bin = getBin(funcName, type13) + rs + getBin(rt, reg) + imm; /* BUG FIXED: change getBin(rs, reg) to rs */
             outfile << bin << endl;
         }
         else if (type14.count(funcName) == 1) { //rt, imm, rs
@@ -354,6 +393,8 @@ void secondScan(string myFile, string outFile, LabelTable* table) {
             ++cnt;
             removeFrontSpace(line);
             label = line.substr(0, line.find(" "));
+            removeBackSpace(label);    /* BUG FIXED: label can come with tab and tab can not be
+                                        removed by the above operation */
             bin = getBin(funcName, type15) + "00" + toBinary(table->getAddress(label), 24);
             outfile << bin << endl;
         }
