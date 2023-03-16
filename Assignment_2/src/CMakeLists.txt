@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 3.22.1)
-set(CMAKE_CXX_COMPILER "g++")
-project(project_2 CXX)
-set(simulator simulator.cpp lib.cpp)
-add_executable(simulator ${simulator})
