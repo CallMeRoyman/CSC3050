@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/roymanclee/CSC3050-Royman/Assignment_2/src/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/simulator.dir/simulator.cpp.o -c /home/roymanclee/CSC3050-Royman/Assignment_2/src/simulator.cpp",
+  "file": "/home/roymanclee/CSC3050-Royman/Assignment_2/src/simulator.cpp"
+},
+{
+  "directory": "/home/roymanclee/CSC3050-Royman/Assignment_2/src/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/simulator.dir/lib.cpp.o -c /home/roymanclee/CSC3050-Royman/Assignment_2/src/lib.cpp",
+  "file": "/home/roymanclee/CSC3050-Royman/Assignment_2/src/lib.cpp"
+}
+]
